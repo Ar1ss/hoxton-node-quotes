@@ -38,7 +38,7 @@ const quotes = [
     id: 7,
     quote: 'Life is like a box of chocolates. You never know what you’re going to get.',
     quoteName: 'Forrest Gump'
-  }
+  },
 ]
 
 app.get('/', (req, res) => {
