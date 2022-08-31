@@ -44,7 +44,11 @@ const quotes = [
 ]
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send(`
+  <h1>Hello World</h1>
+  <a href="/quotes">Quotes</a>
+  `)
+  
 })
 
 app.get('/quotes', (req, res) => {
