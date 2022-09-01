@@ -39,6 +39,18 @@ app.get('/quotes', (req, res) => {
   res.send(quotesToSend)
 })
 
+app.delete ('/quotes/:id', (req, res) => {
+  const id = Number(req.params.id)
+  const match = quotes.find(quote => quote.id === id)
+  if (!match) {
+    res.status(404).send({ error: 'Not found' })
+  } else {
+    const index = quotes.indexOf(match)
+    quotes.splice(index, 1)
+    res.send(match)
+  }
+} )
+
 app.post ('/quotes', (req, res) => {
   const newQuote = {
     id : quotes[quotes.length - 1].id + 1,
@@ -63,6 +75,19 @@ app.post ('/quotesAuthor', (req, res) => {
   quotesAuthor.push(newAuthor)
   res.send(newAuthor)
 })
+
+app.delete ('/quotesAuthor/:id', (req, res) => {
+  const id = Number(req.params.id)
+  const match = quotesAuthor.find(author => author.id === id)
+  if (!match) {
+    res.status(404).send({ error: 'Not found' })
+  } else {
+    const index = quotesAuthor.indexOf(match)
+    quotesAuthor.splice(index, 1)
+    res.send(match)
+  }
+} )
+
 
 app.listen(port, () =>
   console.log(`Example app listening on port http://localhost:${port}/`)
