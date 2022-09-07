@@ -1,3 +1,4 @@
+
 export const quotes = [
   {
     id: 1,
@@ -75,3 +76,4 @@ export const quotesAuthor = [
       'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Frank_Sinatra_%281957_studio_portrait_close-up%29.jpg/1200px-Frank_Sinatra_%281957_studio_portrait_close-up%29.jpg'
   }
 ]
+
